@@ -14,7 +14,7 @@ contract Stub {
     uint256 secondUint;
     uint256 thirdUint;
     uint256 fourthUint;
-    uint256 fifthhUint;
+    uint256 fifthUint;
   }
 
   struct Strings {
@@ -64,7 +64,7 @@ contract Stub {
     Booleans memory newBooleans;
 
     CallData storage methodCallData = method[methodName];
-    
+
     methodCallData.uints = newUints;
     methodCallData.strings = newStrings;
     methodCallData.addresses = newAddresses;
@@ -72,34 +72,93 @@ contract Stub {
     methodCallData.booleans = newBooleans;
   }
 
-  function callHistory (string methodName) public view returns (
+  function getUints (string methodName) public view returns (
     uint256,
     uint256,
     uint256,
+    uint256,
+    uint256
+    ) {
+    CallData memory methodCallData = method[methodName];
+
+    return (
+      methodCallData.uints.firstUint,
+      methodCallData.uints.secondUint,
+      methodCallData.uints.thirdUint,
+      methodCallData.uints.fourthUint,
+      methodCallData.uints.fifthUint
+      );
+  }
+
+  function getStrings (string methodName) public view returns (
     string,
     string,
     string,
+    string,
+    string
+    ) {
+    CallData memory methodCallData = method[methodName];
+
+    return (
+      methodCallData.strings.firstString,
+      methodCallData.strings.secondString,
+      methodCallData.strings.thirdString,
+      methodCallData.strings.fourthString,
+      methodCallData.strings.fifthString
+      );
+  }
+
+  function getAddresses (string methodName) public view returns (
     address,
     address,
     address,
+    address,
+    address
+    ) {
+    CallData memory methodCallData = method[methodName];
+
+    return (
+      methodCallData.addresses.firstAddress,
+      methodCallData.addresses.secondAddress,
+      methodCallData.addresses.thirdAddress,
+      methodCallData.addresses.fourthAddress,
+      methodCallData.addresses.fifthAddress
+      );
+  }
+
+  function getBytes32s (string methodName) public view returns (
+    bytes32,
+    bytes32,
+    bytes32,
+    bytes32,
+    bytes32
+    ) {
+    CallData memory methodCallData = method[methodName];
+
+    return (
+      methodCallData.bytes32s.firstBytes32,
+      methodCallData.bytes32s.secondBytes32,
+      methodCallData.bytes32s.thirdBytes32,
+      methodCallData.bytes32s.fourthBytes32,
+      methodCallData.bytes32s.fifthBytes32
+      );
+  }
+
+  function getBools (string methodName) public view returns (
     bool,
-    uint256,
+    bool,
+    bool,
+    bool,
     bool
     ) {
-    CallData memory data = method[methodName];
+    CallData memory methodCallData = method[methodName];
+
     return (
-      data.firstUint,
-      data.secondUint,
-      data.thirdUint,
-      data.firstString,
-      data.secondString,
-      data.thirdString,
-      data.firstAddress,
-      data.secondAddress,
-      data.thirdAddress,
-      data.called,
-      data.callCount,
-      data.correctCallOrder
-    );
+      methodCallData.booleans.firstBool,
+      methodCallData.booleans.secondBool,
+      methodCallData.booleans.thirdBool,
+      methodCallData.booleans.fourthBool,
+      methodCallData.booleans.fifthBool
+      );
   }
 }
