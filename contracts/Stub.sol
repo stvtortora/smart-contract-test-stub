@@ -57,9 +57,19 @@ contract Stub {
   }
 
   function resetMethod (string methodName) public {
-    CallData storage data = method[methodName];
+    Uints memory newUints;
+    Strings memory newStrings;
+    Addresses memory newAddresses;
+    Bytes32s memory newBytes32s;
+    Booleans memory newBooleans;
 
+    CallData storage methodCallData = method[methodName];
     
+    methodCallData.uints = newUints;
+    methodCallData.strings = newStrings;
+    methodCallData.addresses = newAddresses;
+    methodCallData.bytes32s = newBytes32s;
+    methodCallData.booleans = newBooleans;
   }
 
   function callHistory (string methodName) public view returns (
