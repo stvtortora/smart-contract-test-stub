@@ -8,6 +8,30 @@ const resetMethod = async (stub, methodName) => {
   await stub.resetMethod(methodName);
 }
 
+const getUints = async (stub, methodName) => {
+  let uints = await stub.getUints(methodName);
+
+  return {
+    firstUint: parseBN(data[0]),
+    secondUint: parseBN(data[1]),
+    thirdUint: parseBN(data[2]),
+    fourthUint: parseBN(data[3]),
+    fifthUint: parseBN(data[4])
+  }
+}
+
+const getStrings = async (stub, methodName) => {
+  let uints = await stub.getUints(methodName);
+
+  return {
+    firstString: data[0],
+    secondString: data[1],
+    thirdString: data[2],
+    fourthString: data[3],
+    fifthString: data[4]
+  }
+}
+
 // const callHistory = async (stub, methodName) => {
 //   let data = await stub.callHistory(methodName);
 //
