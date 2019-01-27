@@ -1,0 +1,22 @@
+{
+  "name": "smart-contract-test-stub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stvtortora/smart-contract-test-stub.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stvtortora/smart-contract-test-stub/issues"
+  },
+  "homepage": "https://github.com/stvtortora/smart-contract-test-stub#readme"
+}
