@@ -101,4 +101,4 @@ CallData is also capable of storing types bytes32 and bool. It looks like this:
 ```solidity
   methodCallData.uints.bytes32 = '';
   methodCallData.uints.bool = true;
-``
+```
