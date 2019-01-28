@@ -33,14 +33,14 @@ const getStrings = async (stub, methodName) => {
 }
 
 const getAddresses = async (stub, methodName) => {
-  let uints = await stub.getAddresses(methodName);
+  let addresses = await stub.getAddresses(methodName);
 
   return {
-    firstAddress: data[0],
-    secondAddress: data[1],
-    thirdAddress: data[2],
-    fourthAddress: data[3],
-    fifthAddress: data[4]
+    firstAddress: addresses[0],
+    secondAddress: addresses[1],
+    thirdAddress: addresses[2],
+    fourthAddress: addresses[3],
+    fifthAddress: addresses[4]
   }
 }
 
