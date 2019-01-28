@@ -51,12 +51,12 @@ contract Stub {
 
   mapping(string => CallData) internal method;
 
-  function addMethod (string methodName) public {
+  function addMethod (string memory methodName) public {
     CallData memory newCallData;
     method[methodName] = newCallData;
   }
 
-  function resetMethod (string methodName) public {
+  function resetMethod (string memory methodName) public {
     Uints memory newUints;
     Strings memory newStrings;
     Addresses memory newAddresses;
@@ -72,7 +72,7 @@ contract Stub {
     methodCallData.booleans = newBooleans;
   }
 
-  function getUints (string methodName) public view returns (
+  function getUints (string memory methodName) public view returns (
     uint256,
     uint256,
     uint256,
@@ -90,12 +90,12 @@ contract Stub {
       );
   }
 
-  function getStrings (string methodName) public view returns (
-    string,
-    string,
-    string,
-    string,
-    string
+  function getStrings (string memory methodName) public view returns (
+    string memory,
+    string memory,
+    string memory,
+    string memory,
+    string memory
     ) {
     CallData memory methodCallData = method[methodName];
 
@@ -108,7 +108,7 @@ contract Stub {
       );
   }
 
-  function getAddresses (string methodName) public view returns (
+  function getAddresses (string memory methodName) public view returns (
     address,
     address,
     address,
@@ -126,7 +126,7 @@ contract Stub {
       );
   }
 
-  function getBytes32s (string methodName) public view returns (
+  function getBytes32s (string memory methodName) public view returns (
     bytes32,
     bytes32,
     bytes32,
@@ -144,7 +144,7 @@ contract Stub {
       );
   }
 
-  function getBools (string methodName) public view returns (
+  function getBools (string memory methodName) public view returns (
     bool,
     bool,
     bool,
