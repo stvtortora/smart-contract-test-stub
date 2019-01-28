@@ -14,6 +14,16 @@
     "type": "git",
     "url": "git+https://github.com/stvtortora/smart-contract-test-stub.git"
   },
+  "keywords": [
+    "solidity",
+    "ethereum",
+    "smart",
+    "contracts",
+    "testing",
+    "mocha",
+    "truffle",
+    "javascript"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
