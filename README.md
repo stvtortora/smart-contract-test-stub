@@ -1,6 +1,6 @@
 # smart-contract-test-stub
 
-A simply package for testing interactions between smart contracts in javascript. Ideal for use with the mocha test framework in truffle.
+A simple package for testing interactions between smart contracts in javascript. Ideal for use with the mocha test framework in truffle.
 
 # Install
 ```bash
