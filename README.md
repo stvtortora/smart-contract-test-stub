@@ -2,19 +2,19 @@
 
 A simply package for testing interactions between smart contracts in javascript. Ideal for use with the mocha test framework in truffle.
 
-#Install
+# Install
 ```bash
 npm install smart-contract-test-stub
 ```
 
-#Features
+# Features
 - `Stub.sol`, a base contract for stubbing methods in external solidity contracts
 - `stubUtil`, a simple javascript library for interacting with `Stub.sol` within your javascript tests
 - `parseUtil`, which includes methods for converting big numbers to javascript integers
 
-#Usage
+# Usage
 
-##Mocha Integration
+## Mocha Integration
 If you are using truffle, the mocha test framework is accessible via the test folder in the root of your directory. Import the contract you are testing, the stub of the contract it is interacting with (more on stubs later), and the `stubUtil` module.
 
 ```javascript
@@ -67,7 +67,7 @@ For each getter function, up to five values can be retrieved. For example, the f
 
 There are also methods `getBytes32s` and `getBools`, which work in the same way.
 
-##Solidity Integration
+## Solidity Integration
 To create your own stub contracts, inherit from both the contract you want to stub methods for and the `Stub.sol`:
 
 ```solidity
