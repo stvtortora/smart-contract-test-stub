@@ -15,7 +15,7 @@ npm install smart-contract-test-stub
 # Usage
 
 ## Mocha Integration
-If you are using truffle, the mocha test framework is accessible via the test folder in the root of your directory. Import the contract you are testing, the stub of the contract it is interacting with (more on stubs later), and the `stubUtil` module.
+If you are using truffle, the mocha test framework is accessible via the test folder, which is located in the root of your directory. Import the contract you are testing, the stub of the contract it is interacting with (more on stubs later), and the `stubUtil` module.
 
 ```javascript
 const TestedContract = artifacts.require("TestedContract");
@@ -31,7 +31,6 @@ let calledContract;
 
 contract("TestedContract", async (_accounts) => {
   before(async () => {
-    console.log(stubUtil)
     calledContract = await CalledContractStub.new();
     testedContract = await TestedContract.new(calledContract.address);
   })
@@ -61,14 +60,14 @@ contract("TestedContract", async (_accounts) => {
 
 For each getter function, up to five values can be retrieved. For example, the fifth address passed to a function can be retrieved like so:
 
-```solidity
-  const { fifthAddress } = await stubUtil.getAddresses(calledContract, 'calledMethod');
+```javascript
+const { fifthAddress } = await stubUtil.getAddresses(calledContract, 'calledMethod');
 ```
 
 There are also methods `getBytes32s` and `getBools`, which work in the same way.
 
 ## Solidity Integration
-To create your own stub contracts, inherit from both the contract you want to stub methods for and the `Stub.sol`:
+To create your own stub contracts, inherit from both the contract you want to stub and `Stub.sol`:
 
 ```solidity
 pragma solidity >=0.4.22 <0.6.0;
@@ -91,13 +90,13 @@ contract CalledContractStub is CalledContract, Stub {
   }
 }
 ```
-Using CallData, you can store up to five variables for each type. For example, to store the fourth address passed to a function simply write:
+Using CallData, you can store up to five variables for each type. For example, to store the fourth address passed to a function, simply write:
 
 ```solidity
-  methodCallData.addresses.firstAddress = anotherAddress;
+methodCallData.addresses.firstAddress = anotherAddress;
 ```
 
-CallData is also capable of storing types bytes32 and bool. It looks like this:
+CallData is also capable of storing types bytes32 and bool.
 ```solidity
   methodCallData.uints.bytes32 = '';
   methodCallData.uints.bool = true;
